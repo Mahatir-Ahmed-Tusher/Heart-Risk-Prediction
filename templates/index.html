@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarlyMed - Heart Risk Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { max-width: 600px; margin-top: 50px; }
+        .card { padding: 20px; border-radius: 10px; }
+        footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card shadow-sm">
+            <h2 class="text-center">Heart Risk Prediction</h2>
+            <form action="/predict" method="post">
+                <div class="mb-3">
+                    <label for="pain_arms_jaw_back" class="form-label">Pain in Arms, Jaw, Back</label>
+                    <input type="number" step="any" class="form-control" name="pain_arms_jaw_back" required>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" step="any" class="form-control" name="age" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cold_sweats_nausea" class="form-label">Cold Sweats, Nausea</label>
+                    <input type="number" step="any" class="form-control" name="cold_sweats_nausea" required>
+                </div>
+                <div class="mb-3">
+                    <label for="chest_pain" class="form-label">Chest Pain</label>
+                    <input type="number" step="any" class="form-control" name="chest_pain" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fatigue" class="form-label">Fatigue</label>
+                    <input type="number" step="any" class="form-control" name="fatigue" required>
+                </div>
+                <div class="mb-3">
+                    <label for="dizziness" class="form-label">Dizziness</label>
+                    <input type="number" step="any" class="form-control" name="dizziness" required>
+                </div>
+                <div class="mb-3">
+                    <label for="swelling" class="form-label">Swelling</label>
+                    <input type="number" step="any" class="form-control" name="swelling" required>
+                </div>
+                <div class="mb-3">
+                    <label for="shortness_of_breath" class="form-label">Shortness of Breath</label>
+                    <input type="number" step="any" class="form-control" name="shortness_of_breath" required>
+                </div>
+                <div class="mb-3">
+                    <label for="palpitations" class="form-label">Palpitations</label>
+                    <input type="number" step="any" class="form-control" name="palpitations" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sedentary_lifestyle" class="form-label">Sedentary Lifestyle</label>
+                    <input type="number" step="any" class="form-control" name="sedentary_lifestyle" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Predict</button>
+            </form>
+            <h4 class="text-center mt-3">{{ prediction_text }}</h4>
+        </div>
+        <footer>
+            <p>A side project of <strong>EarlyMed</strong>, a student-driven initiative by VIT students leveraging data science for early detection of chronic diseases.</p>
+        </footer>
+    </div>
+</body>
+</html>
